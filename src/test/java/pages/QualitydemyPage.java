@@ -4,6 +4,7 @@ import org.openqa.selenium.support.*;
 import org.openqa.selenium.support.*;
 import utilities.*;
 public class QualitydemyPage {
+
     public QualitydemyPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }

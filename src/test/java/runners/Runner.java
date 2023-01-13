@@ -1,9 +1,7 @@
 package runners;
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
-
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features" ,
@@ -11,7 +9,6 @@ import org.junit.runner.RunWith;
         tags= "@wip",
         dryRun = false
 )
-
 public class Runner {
     /*
         Cucumber'da Runner class'i bos bir class'tir

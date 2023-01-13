@@ -4,10 +4,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.firefox.*;
 import org.openqa.selenium.safari.*;
-import utilities.ConfigReader;
-
 import java.time.Duration;
-
 public class Driver {
     /* Driver class'indan driver'i getDriver() ile kullaniyoruz
        Sonradan projeye katilan insanlarin Driver class'indan obje olusturarak
@@ -16,18 +13,12 @@ public class Driver {
        Bunun icin Driver class'inin parametresiz constructor'ini olusturup
        access modifier'ini PRIVATE yapmamiz yeterli olur.
      */
-
     private Driver(){
-
     }
-
     static WebDriver driver;
-
     public static WebDriver getDriver(){
-
         String browser= ConfigReader.getProperty("browser");
         if(driver==null) {
-
             switch (browser) {
                 case "chrome" -> {
                     WebDriverManager.chromedriver().setup();

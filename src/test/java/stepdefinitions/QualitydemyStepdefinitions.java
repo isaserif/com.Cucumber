@@ -4,6 +4,9 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import pages.QualitydemyPage;
 import utilities.ConfigReader;
+
+import java.sql.Driver;
+
 public class QualitydemyStepdefinitions {
     QualitydemyPage qualitydemyPage= new QualitydemyPage();
 
@@ -39,4 +42,13 @@ public class QualitydemyStepdefinitions {
         Assert.assertTrue(qualitydemyPage.kullaniciEmailKutusu.isDisplayed());
     }
 
+    @Then("kullanci kutusuna manuel olarak {string} yazar")
+    public void kullanciKutusunaManuelOlarakYazar(String arananUsername) {
+        qualitydemyPage.kullaniciEmailKutusu.sendKeys(arananUsername);
+    }
+
+    @Then("pasword kutusuna manuel olarak{string}yazar")
+    public void paswordKutusunaManuelOlarakYazar(String arananPassword){
+        qualitydemyPage.passwordKutusu.sendKeys(arananPassword);
+    }
 }

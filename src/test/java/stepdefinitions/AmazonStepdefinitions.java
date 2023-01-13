@@ -82,9 +82,10 @@ public class AmazonStepdefinitions {
     }
 
     @Given("kullanici {string} anasayfaya gider")
-    public void kullaniciAnasayfayaGider(String istenenUrl) {
+    public void kullaniciAnasayfayaGider(String istenenUrl) throws InterruptedException {
 
         Driver.getDriver().get(ConfigReader.getProperty(istenenUrl));
+        Thread.sleep(2000);
     }
 
 
@@ -94,5 +95,26 @@ public class AmazonStepdefinitions {
         String actualUrl= Driver.getDriver().getCurrentUrl();
 
         Assert.assertTrue(actualUrl.contains(arananKelime));
+    }
+
+    @Given("amazon {string} adresine gider")
+    public void amazon_adresine_gider(String istenenAmazonUrl) {
+        Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
+    }
+
+    @Then("aramaKutusunda {string} aratir")
+    public void aramakutusundaAratir(String arananUrun) {
+        AmazonPage amazonPage=new AmazonPage();
+        amazonPage.amazonAramaKutusu.sendKeys(ConfigReader.getProperty("aranacakUrun")+Keys.ENTER);
+
+    }
+
+    @Then("aramasnuclarinin {string} içerdigini test eder")
+    public void aramasnuclarininIçerdiginiTestEder(String aranacakUrun) {
+        AmazonPage amazonPage=new AmazonPage();
+     String actualAramaSonucElementi= amazonPage.aramaSonucuElementi.getText();
+     Assert.assertTrue(actualAramaSonucElementi.contains(ConfigReader.getProperty("aranacakUrun")));
+
+
     }
 }
