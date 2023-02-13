@@ -1,4 +1,3 @@
-
 @wip
 Feature: US1012 Window Testi
 
@@ -11,8 +10,8 @@ Feature: US1012 Window Testi
     And username kutusuna deger yazar
     And password kutusuna deger yazar
     Then webunuversity login butonuna basar
-    And Popup ta cikan yazinin validation failed oldugunu test eder
+    And Popup ta cikan yazinin "validation failed" oldugunu test eder
     And OK diyerek popup i kapatir
     Then ilk sayfaya geri doner
     And ilk sayfaya dondugunu test eder
-    And sayfayi kapatir
+    And acilan tüm sayfayi kapatir

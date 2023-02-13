@@ -5,7 +5,8 @@ import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.firefox.*;
 import org.openqa.selenium.safari.*;
 import java.time.Duration;
-public class Driver {
+public class
+Driver {
     /* Driver class'indan driver'i getDriver() ile kullaniyoruz
        Sonradan projeye katilan insanlarin Driver class'indan obje olusturarak
        driver kullanmaya calismalarini engellemek icin
